@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .okno {
+            width: 31px;
+            height: 31px;
+            border: 0px solid red;
+            position: absolute;
+        }
+
+        .okno2 {
+            width: 31px;
+            height: 31px;
+            border: 0px solid white;
+            position: absolute;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .brown {
+            background-color: brown;
+        }
+
+
+
+        .bluevirus {
+            background-image: url("img/covid_blue.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+
+        }
+
+        .brownvirus {
+            background-image: url("img/covid_brown.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+        }
+
+        .yellowvirus {
+            background-image: url("img/covid_yellow.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+
+        }
+
+        body {
+            background-image: url("img/pf.png");
+            background-size: 80%;
+            margin-left: 100px;
+            background-repeat: no-repeat;
+            background-position: top;
+
+        }
+
+        /* klasy tabletek */
+
+        /* brązowe */
+        .brown.up {
+            background-image: url("img/br_up.png");
+            background-size: 100%;
+        }
+
+        .brown.dwn {
+            background-image: url("img/br_down.png");
+            background-size: 100%;
+        }
+
+        .brown.left {
+            background-image: url("img/br_left.png");
+            background-size: 100%;
+        }
+
+        .brown.right {
+            background-image: url("img/br_right.png");
+            background-size: 100%;
+        }
+
+        /* niebieskie */
+        .blue.up {
+            background-image: url("img/bl_up.png");
+            background-size: 100%;
+        }
+
+        .blue.dwn {
+            background-image: url("img/bl_down.png");
+            background-size: 100%;
+        }
+
+        .blue.left {
+            background-image: url("img/bl_left.png");
+            background-size: 100%;
+        }
+
+        .blue.right {
+            background-image: url("img/bl_right.png");
+            background-size: 100%;
+        }
+
+        /* żółte */
+        .yellow.up {
+            background-image: url("img/yl_up.png");
+            background-size: 100%;
+        }
+
+        .yellow.dwn {
+            background-image: url("img/yl_down.png");
+            background-size: 100%;
+        }
+
+        .yellow.left {
+            background-image: url("img/yl_left.png");
+            background-size: 100%;
+        }
+
+        .yellow.right {
+            background-image: url("img/yl_right.png");
+            background-size: 100%;
+        }
+
+        .yellow.dot {
+            background-image: url("img/yl_dot.png");
+            background-size: 100%;
+
+        }
+
+        .blue.dot {
+            background-image: url("img/bl_dot.png");
+            background-size: 100%;
+
+        }
+
+        .brown.dot {
+            background-image: url("img/br_dot.png");
+            background-size: 100%;
+
+        }
+
+
+
+
+        .yellow.empty {
+            background-image: url("img/yl_o.png");
+            background-size: 100%;
+
+        }
+
+        .blue.empty {
+            background-image: url("img/bl_o.png");
+            background-size: 100%;
+
+        }
+
+        .brown.empty {
+            background-image: url("img/br_o.png");
+            background-size: 100%;
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <div id="lupa"></div>
+    <div id="plansza"></div>
+    <div id="animacje">
+        <img id="virusY" class="absolute">
+        <img id="virusBl" class="absolute">
+        <img id="virusBr" class="absolute">
+        <img id="banner" class="absolute" style="left:585px; top:280px; ">
+        <img id="gameOver" class="absolute" style="left:634px; top:280px; ">
+
+    </div>
+    <div id="points">
+        <img id="one" class="absolute" style="left:430px; top:246px; width: 30px;">
+        <img id="ten" class="absolute" style="left:399px; top:246px; width: 30px;">
+        <img id="hundred" class="absolute" style="left:368px; top:246px; width: 30px;">
+
+        <img id="sone" class="absolute" style="left:430px; top:154px; width: 30px;">
+        <img id="sten" class="absolute" style="left:399px; top:154px; width: 30px;">
+        <img id="shundred" class="absolute" style="left:368px; top:154px; width: 30px;">
+
+    </div>
+    <img id="mario" class="absolute" style="left:1070px; top:80px; width: 220px;">
+
+    <script>
+
+        class Frames {
+            constructor() {
+                setTimeout(this.frame1, 25)
+                setTimeout(this.frame2, 50)
+                setTimeout(this.frame3, 75)
+                setTimeout(this.frame4, 100)
+                setTimeout(this.frame5, 125)
+                setTimeout(this.frame6, 150)
+                setTimeout(this.frame7, 175)
+                setTimeout(this.frame8, 200)
+                setTimeout(this.frame9, 225)
+                setTimeout(this.frame10, 250)
+                setTimeout(this.frame11, 275)
+                setTimeout(this.frame12, 300)
+                setTimeout(this.frame13, 325)
+                setTimeout(this.frame14, 350)
+                setTimeout(this.frame15, 375)
+                setTimeout(this.frame16, 400)
+                setTimeout(this.frame17, 425)
+                setTimeout(this.frame18, 450)
+                setTimeout(this.frame19, 475)
+                setTimeout(this.frame20, 500)
+                setTimeout(this.frame21, 525)
+                setTimeout(this.frame22, 550)
+                setTimeout(this.transfer, 575)
+            }
+            frame1() {
+                let temp = table2[2][10]
+                table2[2][10] = table2[3][11]
+                table2[3][11] = temp
+
+                table2[2][10].classList.remove("right")
+                table2[2][10].classList.add("up")
+
+                table2[3][10].classList.remove("left")
+                table2[3][10].classList.add("dwn")
+                printAnimation()
+            }
+            frame2() {
+                let temp = table2[2][9]
+                table2[2][9] = table2[2][10]
+                table2[2][10] = temp
+
+                table2[2][9].classList.remove("up")
+                table2[2][9].classList.add("left")
+
+                temp = table2[2][10]
+                table2[2][10] = table2[3][10]
+                table2[3][10] = temp
+
+                table2[2][10].classList.remove("dwn")
+                table2[2][10].classList.add("right")
+
+                printAnimation()
+
+            }
+            frame3() {
+                let temp = table2[1][9]
+                table2[1][9] = table2[2][10]
+                table2[2][10] = temp
+
+                table2[1][9].classList.remove("right")
+                table2[1][9].classList.add("up")
+
+                table2[2][9].classList.remove("left")
+                table2[2][9].classList.add("dwn")
+
+                printAnimation()
+            }
+            frame4() {
+                let temp = table2[1][8]
+                table2[1][8] = table2[1][9]
+                table2[1][9] = temp
+
+                table2[1][8].classList.remove("up")
+                table2[1][8].classList.add("left")
+
+                temp = table2[1][9]
+                table2[1][9] = table2[2][9]
+                table2[2][9] = temp
+
+                table2[1][9].classList.remove("dwn")
+                table2[1][9].classList.add("right")
+                printAnimation()
+
+                //zmiana położenia ręki
+
+                table2[6][11].style.backgroundImage = ""
+                table2[5][11].style.backgroundImage = ""
+                table2[4][11].style.backgroundImage = ""
+
+
+                table2[5][11].style.backgroundImage = "url(\"img/hands/middle12.png\")"
+
+                table2[5][10].style.backgroundImage = "url(\"img/hands/middle11.png\")"
+
+                table2[6][11].style.backgroundImage = "url(\"img/hands/middle22.png\")"
+                table2[6][10].style.backgroundImage = "url(\"img/hands/middle21.png\")"
+
+            }
+            frame5() {
+                let temp = table2[0][8]
+                table2[0][8] = table2[1][9]
+                table2[1][9] = temp
+
+                table2[0][8].classList.remove("right")
+                table2[0][8].classList.add("up")
+
+                table2[1][8].classList.remove("left")
+                table2[1][8].classList.add("dwn")
+
+                printAnimation()
+            }
+            frame6() {
+                let temp = table2[1][7]
+                table2[1][7] = table2[0][8]
+                table2[0][8] = temp
+
+                table2[1][7].classList.remove("up")
+                table2[1][7].classList.add("left")
+
+                table2[1][8].classList.remove("dwn")
+                table2[1][8].classList.add("right")
+
+                printAnimation()
+            }
+            frame7() {
+                let temp = table2[0][7]
+                table2[0][7] = table2[1][8]
+                table2[1][8] = temp
+
+                table2[0][7].classList.remove("right")
+                table2[0][7].classList.add("up")
+
+                table2[1][7].classList.remove("left")
+                table2[1][7].classList.add("dwn")
+
+                printAnimation()
+
+                //zmiana położenia ręki
+                table2[5][11].style.backgroundImage = ""
+                table2[5][10].style.backgroundImage = ""
+                table2[6][11].style.backgroundImage = ""
+                table2[6][10].style.backgroundImage = ""
+
+                table2[6][11].style.backgroundImage = "url(\"img/hands/down_1.png\")"
+                table2[7][11].style.backgroundImage = "url(\"img/hands/down_2.png\")"
+            }
+            frame8() {
+                let temp = table2[1][6]
+                table2[1][6] = table2[0][7]
+                table2[0][7] = temp
+
+                table2[1][6].classList.remove("up")
+                table2[1][6].classList.add("left")
+
+                table2[1][7].classList.remove("dwn")
+                table2[1][7].classList.add("right")
+
+                printAnimation()
+            }
+            frame9() {
+                let temp = table2[0][6]
+                table2[0][6] = table2[1][7]
+                table2[1][7] = temp
+
+                table2[0][6].classList.remove("right")
+                table2[0][6].classList.add("up")
+
+                table2[1][6].classList.remove("left")
+                table2[1][6].classList.add("dwn")
+
+                printAnimation()
+            }
+            frame10() {
+                let temp = table2[1][5]
+                table2[1][5] = table2[0][6]
+                table2[0][6] = temp
+
+                table2[1][5].classList.remove("up")
+                table2[1][5].classList.add("left")
+
+                table2[1][6].classList.remove("dwn")
+                table2[1][6].classList.add("right")
+
+                printAnimation()
+            }
+            frame11() {
+                let temp = table2[0][5]
+                table2[0][5] = table2[1][6]
+                table2[1][6] = temp
+
+                table2[0][5].classList.remove("right")
+                table2[0][5].classList.add("up")
+
+                table2[1][5].classList.remove("left")
+                table2[1][5].classList.add("dwn")
+
+                printAnimation()
+            }
+            frame12() {
+                let temp = table2[1][4]
+                table2[1][4] = table2[0][5]
+                table2[0][5] = temp
+
+                table2[1][4].classList.remove("up")
+                table2[1][4].classList.add("left")
+
+                table2[1][5].classList.remove("dwn")
+                table2[1][5].classList.add("right")
+
+                printAnimation()
+            }
+            frame13() {
+                let temp = table2[0][4]
+                table2[0][4] = table2[1][5]
+                table2[1][5] = temp
+
+                table2[0][4].classList.remove("right")
+                table2[0][4].classList.add("up")
+
+                table2[1][4].classList.remove("left")
+                table2[1][4].classList.add("dwn")
+
+                printAnimation()
+            }
+            frame14() {
+                let temp = table2[1][3]
+                table2[1][3] = table2[0][4]
+                table2[0][4] = temp
+
+                table2[1][3].classList.remove("up")
+                table2[1][3].classList.add("left")
+
+                table2[1][4].classList.remove("dwn")
+                table2[1][4].classList.add("right")
+
+                printAnimation()
+            }
+            frame15() {
+                let temp = table2[0][3]
+                table2[0][3] = table2[1][4]
+                table2[1][4] = temp
+
+                table2[0][3].classList.remove("right")
+                table2[0][3].classList.add("up")
+
+                table2[1][3].classList.remove("left")
+                table2[1][3].classList.add("dwn")
+
+                printAnimation()
+            }
+            frame16() {
+                let temp = table2[1][2]
+                table2[1][2] = table2[0][3]
+                table2[0][3] = temp
+
+                table2[1][2].classList.remove("up")
+                table2[1][2].classList.add("left")
+
+                table2[1][3].classList.remove("dwn")
+                table2[1][3].classList.add("right")
+
+                printAnimation()
+            }
+            frame17() {
+                let temp = table2[0][2]
+                table2[0][2] = table2[1][3]
+                table2[1][3] = temp
+
+                table2[0][2].classList.remove("right")
+                table2[0][2].classList.add("up")
+
+                table2[1][2].classList.remove("left")
+                table2[1][2].classList.add("dwn")
+
+                printAnimation()
+            }
+            frame18() {
+                let temp = table2[2][0]
+                table2[2][0] = table2[0][2]
+                table2[0][2] = temp
+
+                table2[2][0].classList.remove("up")
+                table2[2][0].classList.add("left")
+
+                temp = table2[1][2]
+                table2[1][2] = table2[2][1]
+                table2[2][1] = temp
+
+                table2[2][1].classList.remove("dwn")
+                table2[2][1].classList.add("right")
+                printAnimation()
+            }
+            frame19() {
+                let temp = table2[3][0]
+                table2[3][0] = table2[2][0]
+                table2[2][0] = temp
+
+
+                temp = table2[3][1]
+                table2[3][1] = table2[2][1]
+                table2[2][1] = temp
+
+                printAnimation()
+            }
+            frame20() {
+                let temp = table2[4][0]
+                table2[4][0] = table2[3][0]
+                table2[3][0] = temp
+
+
+                temp = table2[4][1]
+                table2[4][1] = table2[3][1]
+                table2[3][1] = temp
+
+                printAnimation()
+            }
+            frame21() {
+                let temp = table2[5][0]
+                table2[5][0] = table2[4][0]
+                table2[4][0] = temp
+
+
+                temp = table2[5][1]
+                table2[5][1] = table2[4][1]
+                table2[4][1] = temp
+
+                printAnimation()
+            }
+            frame22() {
+                let temp = table2[6][0]
+                table2[6][0] = table2[5][0]
+                table2[5][0] = temp
+
+
+                temp = table2[6][1]
+                table2[6][1] = table2[5][1]
+                table2[5][1] = temp
+
+                printAnimation()
+            }
+            transfer() {
+                if (table2[6][0].classList.contains("yellow")) {
+                    var randColor1 = "yellow"
+                }
+                if (table2[6][0].classList.contains("blue")) {
+                    var randColor1 = "blue"
+                }
+                if (table2[6][0].classList.contains("brown")) {
+                    var randColor1 = "brown"
+                }
+
+                if (table2[6][1].classList.contains("yellow")) {
+                    var randColor2 = "yellow"
+                }
+                if (table2[6][1].classList.contains("blue")) {
+                    var randColor2 = "blue"
+                }
+                if (table2[6][1].classList.contains("brown")) {
+                    var randColor2 = "brown"
+                }
+                table[0][3].classList.add(index)
+                table[0][4].classList.add(index)
+
+                table[0][3].classList.add("left")
+                table[0][4].classList.add("right")
+
+                table[0][3].classList.add(randColor1)
+                table[0][4].classList.add(randColor2)
+
+                table[0][3].classList.add("moving")
+                table[0][4].classList.add("moving")
+                table[0][3].classList.add("conected")
+                table[0][4].classList.add("conected")
+                table[0][4].classList.add("movable")
+
+                table2[6][1].classList.remove("right")
+                table2[6][0].classList.remove("left")
+                table2[6][0].classList.remove(randColor1)
+                table2[6][1].classList.remove(randColor2)
+
+                add()
+                index++
+            }
+        }
+
+
+
+
+
+        var direction
+        var table
+        var table2
+        var running
+        var addNew
+        var index
+        var scoore
+        var image
+        var angle
+
+        prepareGame()
+        
+        function prepareGame() {
+
+            direction = "horizontal"
+            table = []
+            table2 = []
+            running = true
+            addNew = true
+            index = 0
+            scoore = 0
+            image = 1
+            angle = 3
+            for (let i = 0; i < 16; i++) {
+                table[i] = []
+
+                for (let a = 0; a < 8; a++) {
+                    var div = document.createElement("div")
+                    div.style.left = 674 + a * 31 + "px"
+                    div.style.top = 185 + i * 31 + "px"
+                    div.classList = "okno"
+                    table[i][a] = div
+                    plansza.appendChild(div)
+                }
+
+            }
+
+            for (let i = 0; i < 8; i++) {
+                table2[i] = []
+
+                for (let a = 0; a < 12; a++) {
+                    var div = document.createElement("div")
+                    div.style.left = 766 + a * 31 + "px"
+                    div.style.top = 2 + i * 31 + "px"
+                    div.classList = "okno2"
+                    table2[i][a] = div
+                    animacje.appendChild(div)
+                }
+
+            }
+            table2[6][11].style.backgroundImage = "url(\"img/hands/up_3.png\")"
+            table2[5][11].style.backgroundImage = "url(\"img/hands/up_2.png\")"
+            table2[4][11].style.backgroundImage = "url(\"img/hands/up_1.png\")"
+
+            table2[5][11].style.backgroundSize = "100%"
+            table2[4][11].style.backgroundSize = "100%"
+            table2[5][10].style.backgroundSize = "100%"
+            table2[6][11].style.backgroundSize = "100%"
+            table2[6][10].style.backgroundSize = "100%"
+            table2[7][11].style.backgroundSize = "100%"
+            table2[7][10].style.backgroundSize = "100%"
+
+            image = 1
+            angle = 3
+            virusCircle()
+            setInterval(virusCircle, 800)
+
+            addviruses()
+            setInterval(game, 400)
+            setInterval(fallProcedure, 50)
+            printAnimation()
+            add()
+            new Frames()
+        }
+
+
+
+        addEventListener("keydown", function (e) {
+            if (e.key == "ArrowLeft") {
+                left()
+
+            }
+            if (e.key == "ArrowRight") {
+                right()
+            }
+            if (e.keyCode == 40) {
+                goToBottom()
+            }
+            if (e.keyCode == 32) {
+                rotate()
+            }
+
+
+        })
+
+        function game() {
+            if (table[0][3].classList.contains("stopped") || table[0][4].classList.contains("stopped")) {
+                document.getElementById("gameOver").src = "img/go.png"
+                document.getElementById("mario").src = "img/go_dr.png"
+
+            }
+            else {
+                if (scoore != 5) {
+
+                    if (running == true) {
+
+                        checkFall()
+                        fall()
+                        checkIfDestroy()
+                        destroy()
+
+                        fallingBrics()
+
+                        print()
+                    }
+
+                    displayScoore()
+                    creatdDots()
+                    maxScoore()
+                }
+                else {
+                    displayScoore()
+
+                    document.getElementById("banner").src = "img/sc.png"
+                    setTimeout(() => {
+                        document.getElementById("banner").src = ""
+
+                    }, 600);
+                    localStorage.setItem("wynik", scoore);
+
+                }
+            }
+        }
+
+        function add() {
+            direction = "horizontal"
+
+            let randColor1 = Math.floor(Math.random() * 3) + 1
+            let randColor2 = Math.floor(Math.random() * 3) + 1
+            if (randColor1 == 1) {
+                randColor1 = "yellow"
+            }
+            if (randColor1 == 2) {
+                randColor1 = "blue"
+            }
+            if (randColor1 == 3) {
+                randColor1 = "brown"
+            }
+
+            if (randColor2 == 1) {
+                randColor2 = "yellow"
+            }
+            if (randColor2 == 2) {
+                randColor2 = "blue"
+            }
+            if (randColor2 == 3) {
+                randColor2 = "brown"
+            }
+            table2[3][10].classList.add("left")
+            table2[3][11].classList.add("right")
+
+            table2[3][10].classList.add(randColor1)
+            table2[3][11].classList.add(randColor2)
+            table2[6][11].style.backgroundImage = "url(\"img/hands/up_3.png\")"
+            table2[5][11].style.backgroundImage = "url(\"img/hands/up_2.png\")"
+            table2[4][11].style.backgroundImage = "url(\"img/hands/up_1.png\")"
+            table2[7][11].style.backgroundImage = ""
+
+            printAnimation()
+
+        }
+
+
+        function addviruses() {
+
+            for (let i = 0; i < 5; i++) {
+                randx = Math.floor(Math.random() * 8) + 8
+                randy = Math.floor(Math.random() * 8)
+
+
+                while (table[randx][randy].classList.contains("virus")) {
+                    randx = Math.floor(Math.random() * 8) + 8
+                    randy = Math.floor(Math.random() * 8)
+
+
+                }
+                table[randx][randy].classList.add("virus")
+                table[randx][randy].classList.add("stopped")
+                randColor = Math.floor(Math.random() * 3) + 1
+                if (randColor == 1) {
+                    randColor = "yellow"
+                    virusColor = "yellowvirus"
+
+                }
+                if (randColor == 2) {
+                    randColor = "blue"
+                    virusColor = "bluevirus"
+
+                }
+                if (randColor == 3) {
+                    randColor = "brown"
+                    virusColor = "brownvirus"
+                }
+                table[randx][randy].classList.add(virusColor)
+
+                table[randx][randy].classList.add(randColor)
+
+
+            }
+        }
+
+
+
+
+        function checkMove(dir, posx, posy) {
+            if (dir == "right") {
+                if (posy == 8) {
+                    return false
+                }
+                else if (table[posx][posy + 1].classList.contains("stopped")) {
+                    return false
+
+                }
+                else if (direction == "vertical") {
+                    if (posx != 0) {
+
+                        if (table[posx - 1][posy].classList.contains("moving")) {
+                            if (table[posx - 1][posy + 1].classList.contains("stopped")) {
+
+                                return false
+
+                            }
+                        }
+                    }
+                }
+                return true
+
+
+
+
+
+            }
+            else if (dir == "left") {
+                if (posy == 0) {
+                    return false
+
+                }
+
+                else if (table[posx][posy - 1].classList.contains("stopped")) {
+                    return false
+
+                }
+                else if (direction == "vertical") {
+                    if (posx != 0) {
+                        if (table[posx - 1][posy].classList.contains("moving")) {
+                            if (table[posx - 1][posy - 1].classList.contains("stopped")) {
+
+                                return false
+
+                            }
+                        }
+                    }
+                }
+
+                return true
+
+
+            }
+        }
+
+
+        function rotate() {
+            if (direction == "horizontal") {
+                for (let i = 0; i < 15; i++) {
+                    for (let a = 0; a < 8; a++) {
+
+                        if (table[i][a].classList.contains("movable") && table[i][a].classList.contains("moving")) {
+                            if (table[i - 1][a - 1].classList.contains("stopped")) {
+
+                            }
+                            else {
+                                direction = "vertical"
+
+                                temp = table[i - 1][a - 1]
+                                table[i - 1][a - 1] = table[i][a]
+                                table[i][a] = temp
+                                table[i - 1][a - 1].classList.add("movable")
+
+                                table[i - 1][a - 1].classList.remove("right")
+                                table[i - 1][a - 1].classList.add("up")
+                                table[i][a - 1].classList.remove("left")
+                                table[i][a - 1].classList.add("dwn")
+                                print()
+                                return 0
+
+                            }
+                        }
+                    }
+                }
+
+            }
+            else if (direction == "vertical") {
+                for (let i = 1; i < 15; i++) {
+                    for (let a = 0; a < 8; a++) {
+
+                        if (table[i][a].classList.contains("movable") && table[i][a].classList.contains("moving")) {
+                            if (table[i + 1][a + 1].classList.contains("stopped")) {
+                            }
+                            else {
+                                direction = "horizontal"
+                                temp = table[i + 1][a + 1]
+                                table[i + 1][a + 1] = table[i + 1][a]
+                                table[i + 1][a] = table[i][a]
+                                table[i][a] = temp
+
+                                table[i + 1][a].classList.remove("movable")
+                                table[i + 1][a + 1].classList.add("movable")
+
+
+                                table[i + 1][a].classList.remove("up")
+                                table[i + 1][a].classList.add("left")
+                                table[i + 1][a + 1].classList.remove("dwn")
+                                table[i + 1][a + 1].classList.add("right")
+
+                                print()
+                                return 0
+
+                            }
+
+
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+
+        function right() {
+            for (let i = 15; i >= 0; i--) {
+                for (let a = 7; a >= 0; a--) {
+                    if (table[i][a].classList.contains("moving")) {
+                        if (checkMove("right", i, a)) {
+                            temp = table[i][a + 1]
+                            table[i][a + 1] = table[i][a]
+                            table[i][a] = temp
+                        }
+                        else {
+                            return 0
+                        }
+
+
+                    }
+
+                }
+            }
+            print()
+
+        }
+
+        function left() {
+            for (let i = 15; i >= 0; i--) {
+                for (let a = 0; a < 8; a++) {
+
+                    if (table[i][a].classList.contains("moving")) {
+                        if (checkMove("left", i, a)) {
+
+                            temp = table[i][a - 1]
+                            table[i][a - 1] = table[i][a]
+                            table[i][a] = temp
+                        }
+                        else {
+                            return 0
+                        }
+                    }
+                }
+            }
+            print()
+
+        }
+
+        function stop() {
+            for (let i = 0; i < 15; i++) {
+                for (let a = 0; a < 8; a++) {
+
+                    if (table[i][a].classList.contains("moving")) {
+                        table[i][a].classList.remove("moving")
+                        table[i][a].classList.add("stopped")
+                    }
+                }
+            }
+        }
+
+
+
+        function checkFall() {
+            stophere = false
+            // if (direction == "horizontal") {
+            for (let i = 0; i < 15; i++) {
+                for (let a = 0; a < 8; a++) {
+                    if (table[i][a].classList.contains("moving")) {
+                        if (table[i + 1][a].classList.contains("stopped")) {
+                            godown = false
+                            stophere = true
+                        }
+
+                    }
+                }
+            }
+
+            let i = 15
+            for (let a = 0; a < 8; a++) {
+                if (table[i][a].classList.contains("moving")) {
+                    stophere = true
+                }
+            }
+
+
+
+
+
+            if (!stophere) {
+                for (let i = 0; i < 15; i++) {
+                    for (let a = 0; a < 8; a++) {
+                        if (table[i][a].classList.contains("moving")) {
+                            table[i][a].classList.add("down")
+
+                        }
+                    }
+                }
+            }
+            else {
+                for (let i = 0; i < 16; i++) {
+                    for (let a = 0; a < 8; a++) {
+                        if (table[i][a].classList.contains("moving")) {
+                            table[i][a].classList.remove("moving")
+                            table[i][a].classList.add("stopped")
+                            table[i][a].classList.remove("movable")
+                            running = true
+
+                        }
+                    }
+                }
+                new Frames()
+
+
+            }
+
+
+
+
+
+
+        }
+        function fall() {
+            for (let i = 15; i >= 0; i--) {
+                for (let a = 0; a < 8; a++) {
+                    if (table[i][a].classList.contains("down")) {
+                        table[i][a].classList.remove("down")
+                        temp = table[i + 1][a]
+                        table[i + 1][a] = table[i][a]
+                        table[i][a] = temp
+
+                    }
+                }
+            }
+        }
+
+
+
+        function print() {
+            for (let i = 0; i < 16; i++) {
+                for (let a = 0; a < 8; a++) {
+                    table[i][a].style.left = 674 + a * 31 + "px"
+                    table[i][a].style.top = 185 + i * 31 + "px"
+
+                    plansza.appendChild(table[i][a])
+
+                }
+
+            }
+        }
+        function printAnimation() {
+            for (let i = 0; i < 8; i++) {
+                for (let a = 0; a < 12; a++) {
+                    table2[i][a].style.left = 766 + a * 31 + "px"
+                    table2[i][a].style.top = 2 + i * 31 + "px"
+                    animacje.appendChild(table2[i][a])
+                }
+
+            }
+        }
+
+        function goToBottom() {
+
+
+            running = false
+            for (i = 0; i < 16; i++) {
+                setTimeout(checkFall, 25 * i)
+                setTimeout(fall, 25 * i)
+
+            }
+            running = true
+
+
+
+
+        }
+
+
+        function checkIfDestroy() {
+
+            for (let i = 0; i < 16; i++) {
+                let color
+                count = 0
+                for (let a = 0; a < 8; a++) {
+                    if (table[i][a].classList.contains("stopped")) {
+
+                        if (table[i][a].classList.contains("blue") || table[i][a].classList.contains("bluevirus") && table[i][a].classList.contains("stopped")) {
+                            if (color != "blue") {
+                                color = "blue"
+                                count = 0
+                            }
+
+
+                            count++
+                        }
+                        else if (table[i][a].classList.contains("brown") || table[i][a].classList.contains("brownvirus") && table[i][a].classList.contains("stopped")) {
+                            if (color != "brown") {
+                                color = "brown"
+                                count = 0
+                            }
+
+                            count++
+                        }
+                        else if (table[i][a].classList.contains("yellow") || table[i][a].classList.contains("yellowvirus") && table[i][a].classList.contains("stopped")) {
+                            if (color != "yellow") {
+                                color = "yellow"
+                                count = 0
+                            }
+
+                            count++
+                        }
+                    }
+                    else {
+                        color = null
+                        count = 0
+
+                    }
+                    if (count >= 4) {
+                        for (m = 0; m < count; m++) {
+
+                            table[i][a - m].classList.add("delete")
+                        }
+                    }
+                }
+            }
+
+
+
+            for (let a = 0; a < 8; a++) {
+                count = 0
+                for (let i = 0; i < 16; i++) {
+
+                    if (table[i][a].classList.contains("blue") && table[i][a].classList.contains("stopped")) {
+                        if (color != "blue") {
+                            color = "blue"
+                            count = 0
+                        }
+
+
+                        count++
+                    }
+                    else if (table[i][a].classList.contains("brown") && table[i][a].classList.contains("stopped")) {
+                        if (color != "brown") {
+                            color = "brown"
+                            count = 0
+                        }
+
+                        count++
+                    }
+                    else if (table[i][a].classList.contains("yellow") && table[i][a].classList.contains("stopped")) {
+                        if (color != "yellow") {
+                            color = "yellow"
+                            count = 0
+                        }
+
+                        count++
+                    }
+                    else {
+                        color = null
+                        count = 0
+
+                    }
+
+                    if (count >= 4) {
+                        for (m = 0; m < count; m++) {
+
+                            table[i - m][a].classList.add("delete")
+                        }
+                    }
+                }
+            }
+        }
+
+        function destroy() {
+            for (let i = 0; i < 16; i++) {
+                for (let a = 0; a < 8; a++) {
+                    if (table[i][a].classList.contains("delete")) {
+                        if (table[i][a].classList.contains("virus")) {
+                            scoore += 1
+                            console.log(scoore)
+                        }
+
+
+
+
+
+                        table[i][a].classList.remove("virus")
+                        table[i][a].classList.remove("yellowvirus")
+                        table[i][a].classList.remove("brownvirus")
+                        table[i][a].classList.remove("bluevirus")
+
+                        table[i][a].classList.remove("up")
+                        table[i][a].classList.remove("dwn")
+                        table[i][a].classList.remove("left")
+                        table[i][a].classList.remove("right")
+                        table[i][a].classList.remove("dot")
+                        table[i][a].classList.add("empty")
+
+                        setTimeout(() => {
+                            table[i][a].classList.remove("yellow")
+                            table[i][a].classList.remove("brown")
+                            table[i][a].classList.remove("blue")
+                            table[i][a].classList.remove("empty")
+
+
+                            // print()
+                            var div = document.createElement("div")
+
+                            div.style.left = 100 + a * 31 + "px"
+                            div.style.top = 50 + i * 31 + "px"
+                            div.classList = "okno"
+
+                            table[i][a] = div
+
+
+                        }, 200);
+
+                    }
+                }
+            }
+
+        }
+
+        function fallProcedure() {
+            let x = 1
+            running = false
+            // while (x != 0) {
+            x = fallingBrics()
+            if (x == 0) {
+                running = true
+
+            }
+            fall()
+            checkIfDestroy()
+            destroy()
+            print()
+            creatdDots()
+            // }
+
+        }
+
+
+        function fallingBrics() {
+            let num = 0
+            for (let i = 0; i < index; i++) {
+
+                falling = 0
+
+
+                let brick1 = document.getElementsByClassName(i)[0]
+                let brick2 = document.getElementsByClassName(i)[1]
+
+
+                let pos1 = getByClass(brick1)
+                let pos2 = getByClass(brick2)
+
+                let x1 = pos1[0]
+                let y1 = pos1[1]
+                let x2 = pos2[0]
+                let y2 = pos2[1]
+
+
+
+
+
+
+
+                if (brick1.classList.contains("stopped") || brick2.classList.contains("stopped")) {
+
+                    if (x1 != 15 && x2 != 15) {
+                        if (pos1.length != 0) {
+                            if (pos2.length != 0) {
+                                if (table[x1 + 1][y1].classList.contains("stopped") && table[x1 + 1][y1] != brick2) {
+
+                                }
+                                else if (table[x2 + 1][y2].classList.contains("stopped") && table[x2 + 1][y2] != brick1) {
+
+                                }
+                                else {
+                                    table[x1][y1].classList.add("down")
+                                    table[x2][y2].classList.add("down")
+                                    num++
+                                }
+
+
+
+                            }
+                            else {
+                                if (table[x1 + 1][y1].classList.contains("stopped")) {
+
+                                }
+                                else {
+                                    table[x1][y1].classList.add("down")
+                                    table[x1][y1].classList.remove("up")
+                                    table[x1][y1].classList.remove("dwn")
+                                    table[x1][y1].classList.remove("left")
+                                    table[x1][y1].classList.remove("right")
+                                    table[x1][y1].classList.add("dot")
+
+                                    num++
+
+                                }
+                            }
+                        }
+                        else if (pos2.length != 0) {
+                            if (table[x2 + 1][y2].classList.contains("stopped")) {
+
+                            }
+                            else {
+                                table[x2][y2].classList.add("down")
+                                table[x2][y2].classList.remove("up")
+                                table[x2][y2].classList.remove("dwn")
+                                table[x2][y2].classList.remove("left")
+                                table[x2][y2].classList.remove("right")
+                                table[x2][y2].classList.add("dot")
+                                num++
+
+                            }
+                        }
+                    }
+                }
+            }
+
+            // checkFall()
+            // fall()
+            return num
+        }
+
+        function getByClass(item) {
+            let itempos = []
+
+            for (let i = 0; i < 16; i++) {
+                let c = table[i].indexOf(item)
+                if (c != -1) {
+                    itempos.push(i, c)
+
+                }
+            }
+
+            return (itempos)
+        }
+
+
+        function creatdDots() {
+            for (let i = 0; i < index; i++) {
+                let brick1 = document.getElementsByClassName(i)[0]
+                let brick2 = document.getElementsByClassName(i)[1]
+                let pos1 = getByClass(brick1)
+                let pos2 = getByClass(brick2)
+                let x1 = pos1[0]
+                let y1 = pos1[1]
+                let x2 = pos2[0]
+                let y2 = pos2[1]
+                if (brick1.classList.contains("stopped") || brick2.classList.contains("stopped")) {
+
+                    if (pos1.length != 0) {
+                        if (pos2.length == 0) {
+
+                            table[x1][y1].classList.remove("up")
+                            table[x1][y1].classList.remove("dwn")
+                            table[x1][y1].classList.remove("left")
+                            table[x1][y1].classList.remove("right")
+                            table[x1][y1].classList.add("dot")
+
+
+
+
+
+                        }
+                    }
+                    else if (pos2.length != 0) {
+
+                        table[x2][y2].classList.remove("up")
+                        table[x2][y2].classList.remove("dwn")
+                        table[x2][y2].classList.remove("left")
+                        table[x2][y2].classList.remove("right")
+                        table[x2][y2].classList.add("dot")
+
+
+                    }
+
+                }
+            }
+        }
+
+        function addAnimation() {
+
+
+
+        }
+
+
+
+
+        function virusCircle() {
+
+            let x = 525 + 100 * Math.cos(angle)
+            let y = 335 + 100 * Math.sin(angle)
+
+            document.getElementById("virusY").style.left = y + "px"
+            document.getElementById("virusY").style.top = x + "px"
+            document.getElementById("virusY").src = "img/lupa/yl/" + image + ".png"
+
+            x = 525 + 100 * Math.cos(angle + 90)
+            y = 335 + 100 * Math.sin(angle + 90)
+
+            document.getElementById("virusBl").style.left = y + "px"
+            document.getElementById("virusBl").style.top = x + "px"
+            document.getElementById("virusBl").src = "img/lupa/bl/" + image + ".png"
+
+            x = 525 + 100 * Math.cos(angle + 180)
+            y = 335 + 100 * Math.sin(angle + 180)
+
+            document.getElementById("virusBr").style.left = y + "px"
+            document.getElementById("virusBr").style.top = x + "px"
+            document.getElementById("virusBr").src = "img/lupa/br/" + image + ".png"
+
+            angle += 0.2
+            image++
+            if (image == 4) {
+                image = 1
+            }
+        }
+
+        function displayScoore() {
+
+            console.log(scoore)
+            let num1 = Math.floor(scoore % 10)
+            let num2 = Math.floor(scoore / 10 % 10)
+            let num3 = Math.floor(scoore / 100 % 10)
+            document.getElementById("one").src = "img/cyfry/" + num1 + ".png"
+            document.getElementById("ten").src = "img/cyfry/" + num2 + ".png"
+            document.getElementById("hundred").src = "img/cyfry/" + num3 + ".png"
+
+
+        }
+        function maxScoore() {
+            let max = localStorage.getItem("wynik")
+
+            let num1 = Math.floor(max % 10)
+            let num2 = Math.floor(max / 10 % 10)
+            let num3 = Math.floor(max / 100 % 10)
+            document.getElementById("sone").src = "img/cyfry/" + num1 + ".png"
+            document.getElementById("sten").src = "img/cyfry/" + num2 + ".png"
+            document.getElementById("shundred").src = "img/cyfry/" + num3 + ".png"
+        }
+        function gameOver() {
+            if (table[0][3] || table[0][4]) {
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
