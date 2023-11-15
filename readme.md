@@ -10,4 +10,4 @@ CSS
 ## Setup
 To run project, open it in browser
 
-You can acces it by clicking link on it's github page.
+You can also acces it by clicking link on it's github page.
