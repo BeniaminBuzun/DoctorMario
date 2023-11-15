@@ -4,6 +4,8 @@ One of my first projects, so file managment is lacking
 ## Technologies
 Project created used:
 javascript
+HTML
+CSS
 
 ## Setup
 To run project, open it in browser
