@@ -3,9 +3,9 @@ Simple recreation fo Doctor Mario in JavaScript.
 
 ## Technologies
 Project created used:
-javascript.
-HTML.
-CSS.
+javascript 
+HTML 
+CSS
 
 ## Setup
 To run project, open it in browser
