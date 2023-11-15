@@ -1,11 +1,11 @@
 ## General Info
 Simple recreation fo Doctor Mario in JavaScript.
-One of my first projects, so file managment is lacking
+
 ## Technologies
 Project created used:
-javascript
-HTML
-CSS
+javascript.
+HTML.
+CSS.
 
 ## Setup
 To run project, open it in browser
