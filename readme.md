@@ -3,8 +3,8 @@ Simple recreation fo Doctor Mario in JavaScript.
 
 ## Technologies
 Project created used:
-javascript 
-HTML 
+Javascript, 
+HTML,
 CSS
 
 ## Setup
